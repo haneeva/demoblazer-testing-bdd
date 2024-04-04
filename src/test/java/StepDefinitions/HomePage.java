@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-
+import io.cucumber.java.en.When;
 public class HomePage {
 
     public static WebDriver driver;
@@ -18,8 +18,13 @@ public class HomePage {
         driver = new ChromeDriver(chromeOptions);
         driver.get("https://www.demoblaze.com/");
         System.out.println("Navigate to browser");
-
     }
+
+    @When("User click home menu")
+    public void user_click_home_menu() {
+        System.out.println("Go to Home page");
+    }
+
     @Then("User should see the web")
     public void user_should_see_the_web() {
         System.out.println("Web should be opened to demoblaze website");
